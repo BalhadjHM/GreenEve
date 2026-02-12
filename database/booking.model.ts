@@ -64,4 +64,7 @@ bookingSchema.index({ eventId: 1 });
 // Export the Booking model
 const Booking: Model<IBooking> = mongoose.models.Booking || mongoose.model<IBooking>('Booking', bookingSchema);
 
+// Create compound index on email and eventId to prevent duplicate bookings
+bookingSchema.index({ email: 1, eventId: 1 }, { unique: true, name: 'unique_booking' });
+
 export default Booking;
