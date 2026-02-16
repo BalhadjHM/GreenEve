@@ -9,11 +9,15 @@ import { PostHogProvider } from "./providers";
 const schibestedGrotesk = Schibsted_Grotesk({
 	variable: "--font-schibsted-grotesk",
 	subsets: ["latin"],
+	weight: ["400", "500", "600", "700"], // Add explicit weights
+	display: "swap",
 });
 
 const martianMono = Martian_Mono({
 	variable: "--font-martian-mono",
 	subsets: ["latin"],
+	weight: ["400", "500", "600", "700"], // Add explicit weights
+	display: "swap",
 });
 
 export const metadata: Metadata = {
