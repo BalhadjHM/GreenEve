@@ -24,7 +24,7 @@ const EventCard = ( { slug, title, image, location, date, time }: props ) => {
                 <div className='date'>
                     <Image src="/icons/calendar.svg" alt="Calendar Icon" width={14} height={14} />
                     <p>{date}</p>
-                </div>git remote add origin https://github.com/BalhadjHM/GreenEve.git
+                </div>
                 <div className='time'>
                     <Image src="/icons/clock.svg" alt="Clock Icon" width={14} height={14} />
                     <p>{time}</p>

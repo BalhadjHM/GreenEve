@@ -48,14 +48,12 @@ bookingSchema.pre('save', async function (next) {
       const eventExists = await Event.findById(this.eventId);
       
       if (!eventExists) {
-        return next(new Error('Referenced event does not exist'));
+        throw new Error('Referenced event does not exist');
       }
     } catch (error) {
-      return next(error instanceof Error ? error : new Error('Failed to validate event'));
+      throw error instanceof Error ? error : new Error('Failed to validate event');
     }
   }
-  
-  next();
 });
 
 // Create index on eventId for faster queries
